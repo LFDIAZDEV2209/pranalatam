@@ -1,0 +1,152 @@
+<div class="filters-container">
+  <div class="filters-header">
+    <h3 class="filters-title">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polygon points="22,3 2,3 10,12.46 10,19 14,21 14,12.46 22,3"></polygon>
+      </svg>
+      Filtrar Cursos
+    </h3>
+    <button class="clear-filters-btn" (click)="clearAllFilters()" 
+            [class.visible]="hasActiveFilters()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+      Limpiar Filtros
+    </button>
+  </div>
+
+  <!-- Búsqueda -->
+  <div class="filter-section">
+    <label class="filter-label">Buscar</label>
+    <div class="search-input-container">
+      <input type="text" 
+             class="search-input" 
+             placeholder="Buscar por título, instructor o tema..."
+             [(ngModel)]="searchTerm"
+             (input)="onSearchChange()">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="21 21l-4.35-4.35"></path>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Nivel -->
+  <div class="filter-section">
+    <label class="filter-label">Nivel</label>
+    <div class="checkbox-group">
+      <label class="checkbox-item" *ngFor="let level of availableLevels">
+        <input type="checkbox" 
+               [checked]="selectedLevels().includes(level)"
+               (change)="toggleLevel(level)">
+        <span class="checkmark"></span>
+        <span class="checkbox-label">{{ level }}</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Formato -->
+  <div class="filter-section">
+    <label class="filter-label">Formato</label>
+    <div class="checkbox-group">
+      <label class="checkbox-item" *ngFor="let format of availableFormats">
+        <input type="checkbox" 
+               [checked]="selectedFormats().includes(format)"
+               (change)="toggleFormat(format)">
+        <span class="checkmark"></span>
+        <span class="checkbox-label">{{ format }}</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Categoría -->
+  <div class="filter-section">
+    <label class="filter-label">Categoría</label>
+    <div class="checkbox-group">
+      <label class="checkbox-item" *ngFor="let category of availableCategories">
+        <input type="checkbox" 
+               [checked]="selectedCategories().includes(category)"
+               (change)="toggleCategory(category)">
+        <span class="checkmark"></span>
+        <span class="checkbox-label">{{ category }}</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Instructor -->
+  <div class="filter-section">
+    <label class="filter-label">Instructor</label>
+    <div class="checkbox-group">
+      <label class="checkbox-item" *ngFor="let instructor of availableInstructors">
+        <input type="checkbox" 
+               [checked]="selectedInstructors().includes(instructor)"
+               (change)="toggleInstructor(instructor)">
+        <span class="checkmark"></span>
+        <span class="checkbox-label">{{ instructor }}</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- Rango de Precio -->
+  <div class="filter-section">
+    <label class="filter-label">Precio (COP)</label>
+    <div class="price-range">
+      <div class="price-inputs">
+        <input type="number" 
+               class="price-input" 
+               placeholder="Mínimo"
+               [(ngModel)]="priceMin"
+               (input)="onPriceChange()">
+        <span class="price-separator">-</span>
+        <input type="number" 
+               class="price-input" 
+               placeholder="Máximo"
+               [(ngModel)]="priceMax"
+               (input)="onPriceChange()">
+      </div>
+    </div>
+  </div>
+
+  <!-- Filtros Activos -->
+  <div class="active-filters" *ngIf="hasActiveFilters()">
+    <h4 class="active-filters-title">Filtros Activos</h4>
+    <div class="filter-tags">
+      <!-- Búsqueda -->
+      <span class="filter-tag" *ngIf="searchTerm">
+        Búsqueda: "{{ searchTerm }}"
+        <button (click)="clearSearch()">×</button>
+      </span>
+
+      <!-- Niveles -->
+      <span class="filter-tag" *ngFor="let level of selectedLevels()">
+        Nivel: {{ level }}
+        <button (click)="toggleLevel(level)">×</button>
+      </span>
+
+      <!-- Formatos -->
+      <span class="filter-tag" *ngFor="let format of selectedFormats()">
+        Formato: {{ format }}
+        <button (click)="toggleFormat(format)">×</button>
+      </span>
+
+      <!-- Categorías -->
+      <span class="filter-tag" *ngFor="let category of selectedCategories()">
+        {{ category }}
+        <button (click)="toggleCategory(category)">×</button>
+      </span>
+
+      <!-- Instructores -->
+      <span class="filter-tag" *ngFor="let instructor of selectedInstructors()">
+        {{ instructor }}
+        <button (click)="toggleInstructor(instructor)">×</button>
+      </span>
+
+      <!-- Precio -->
+      <span class="filter-tag" *ngIf="priceMin || priceMax">
+        Precio: ${{ formatPrice(priceMin || 0) }} - ${{ formatPrice(priceMax || 999999) }}
+        <button (click)="clearPriceRange()">×</button>
+      </span>
+    </div>
+  </div>
+</div>

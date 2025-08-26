@@ -1,0 +1,21 @@
+<div class="courses-page">
+  <div class="courses-header">
+    <h1>Cursos de Sanación Pránica</h1>
+    <p>Descubre el poder transformador de la Sanación Pránica</p>
+  </div>
+  
+  <div class="courses-content">
+    <aside class="filters-sidebar">
+      <app-course-filters (filtersChange)="onFiltersChange($event)"></app-course-filters>
+    </aside>
+    
+    <main class="courses-main">
+      <div class="courses-grid">
+        <app-course-card 
+          *ngFor="let course of filteredCourses" 
+          [course]="course">
+        </app-course-card>
+      </div>
+    </main>
+  </div>
+</div>

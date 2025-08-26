@@ -1,0 +1,363 @@
+.course-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen del curso */
+.course-image {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.image-placeholder.pranic-healing {
+  background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
+}
+
+.image-placeholder.arhatic-yoga {
+  background: linear-gradient(135deg, #faf5ff 0%, #e9d8fd 100%);
+}
+
+.image-placeholder.psychotherapy {
+  background: linear-gradient(135deg, #fef5e7 0%, #fed7aa 100%);
+}
+
+.image-content {
+  text-align: center;
+  color: #4a5568;
+}
+
+.course-icon {
+  margin-bottom: 1rem;
+  color: #667eea;
+}
+
+.course-icon svg {
+  width: 48px;
+  height: 48px;
+}
+
+.image-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Badges */
+.level-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.level-badge.basic {
+  background: #48bb78;
+  color: white;
+}
+
+.level-badge.intermediate {
+  background: #ed8936;
+  color: white;
+}
+
+.level-badge.advanced {
+  background: #e53e3e;
+  color: white;
+}
+
+.level-badge.specialization {
+  background: #9f7aea;
+  color: white;
+}
+
+.format-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.format-badge.online {
+  border: 1px solid #4299e1;
+}
+
+.format-badge.presencial {
+  border: 1px solid #48bb78;
+}
+
+.format-badge.hibrido {
+  border: 1px solid #ed8936;
+}
+
+/* Contenido */
+.course-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.course-category {
+  font-size: 0.8rem;
+  color: #667eea;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.course-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.stars {
+  display: flex;
+  gap: 1px;
+}
+
+.rating-text {
+  font-size: 0.85rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.course-title {
+  margin: 0 0 1rem 0;
+}
+
+.course-title a {
+  color: #2d3748;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+  display: block;
+}
+
+.course-title a:hover {
+  color: #667eea;
+}
+
+.course-subtitle {
+  display: block;
+  font-size: 1rem;
+  color: #718096;
+  font-weight: 400;
+  margin-top: 0.25rem;
+}
+
+.course-description {
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+/* Instructor */
+.course-instructor {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.instructor-avatar {
+  flex-shrink: 0;
+}
+
+.avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  background: #e2e8f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a0aec0;
+}
+
+.instructor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.instructor-name {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.9rem;
+}
+
+.instructor-title {
+  color: #718096;
+  font-size: 0.8rem;
+}
+
+/* Meta información */
+.course-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.duration,
+.next-date {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.duration svg,
+.next-date svg {
+  color: #a0aec0;
+}
+
+/* Footer del curso */
+.course-footer {
+  margin-top: auto;
+  border-top: 1px solid #f7fafc;
+  padding-top: 1rem;
+}
+
+.pricing {
+  margin-bottom: 1rem;
+}
+
+.price-current {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.price-regular {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.original-price {
+  font-size: 1rem;
+  color: #a0aec0;
+  text-decoration: line-through;
+}
+
+.discount-badge {
+  background: #e53e3e;
+  color: white;
+  padding: 0.125rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.course-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn-sm {
+  padding: 0.625rem 1rem;
+  font-size: 0.9rem;
+}
+
+.course-actions .btn {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+}
+
+/* Badge de disponibilidad */
+.availability-badge {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.375rem 1rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 10;
+}
+
+.availability-badge.limited {
+  background: #fed7aa;
+  color: #c05621;
+}
+
+.availability-badge.full {
+  background: #feb2b2;
+  color: #c53030;
+}
+
+.availability-badge.new {
+  background: #c6f6d5;
+  color: #2f855a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .course-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .course-actions {
+    flex-direction: column;
+  }
+}
