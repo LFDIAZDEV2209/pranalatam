@@ -280,7 +280,7 @@ import { RouterModule } from '@angular/router';
                   <i class="bi bi-person-circle text-warning"></i>
                 </div>
                 <div class="author-info">
-                  <h4>Ana Rodríguez</h3>
+                  <h4>Ana Rodríguez</h4>
                   <span>Participante Talleres</span>
                 </div>
               </div>
