@@ -184,23 +184,25 @@ import { RouterModule } from '@angular/router';
     .nav-list { display: flex; list-style: none; margin: 0; padding: 0; gap: 1rem; }
     .nav-item { position: relative; }
     .nav-link { display: flex; align-items: center; color: var(--text-dark); text-decoration: none; font-weight: 500; padding: 0.35rem 0.75rem; border-radius: 8px; transition: all 0.2s ease; }
+    .nav-link i { margin-right: 0.45rem; }
     .nav-link:hover, .nav-link.active { color: var(--primary-pink); background: rgba(233, 30, 99, 0.08); }
 
     .dropdown-toggle { cursor: pointer; }
-    .dropdown-toggle .bi-chevron-down { margin-left: 0.35rem; transition: transform 0.2s ease; }
+    .dropdown-toggle .bi-chevron-down { margin-left: 0.45rem; transition: transform 0.2s ease; }
     .dropdown:hover .dropdown-toggle .bi-chevron-down { transform: rotate(180deg); }
 
     .dropdown-menu { position: absolute; top: 100%; left: 0; background: var(--background-white); border-radius: 12px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); min-width: 220px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: all 0.2s ease; padding: 0.5rem 0; z-index: 1001; }
     .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown-item { display: flex; align-items: center; padding: 0.6rem 1rem; color: var(--text-dark); text-decoration: none; transition: all 0.2s ease; }
+    .dropdown-item i { margin-right: 0.5rem; }
     .dropdown-item:hover { background: var(--background-light); color: var(--primary-pink); transform: translateX(4px); }
 
     .header-actions { display: flex; align-items: center; gap: 0.6rem; position: relative; }
-    .icon-btn { background: var(--background-light); border: 1px solid var(--border-light); color: var(--text-dark); padding: 0.45rem; border-radius: 10px; cursor: pointer; }
+    .icon-btn { background: var(--background-light); border: 1px solid var(--border-light); color: var(--text-dark); padding: 0.5rem; border-radius: 10px; cursor: pointer; }
     .icon-btn:hover { background: var(--primary-pink); color: white; border-color: var(--primary-pink); }
 
-    .user-actions.compact { display: flex; gap: 0.4rem; }
-    .user-btn, .donate-btn { display: flex; align-items: center; gap: 0.5rem; padding: 0.45rem 0.7rem; border-radius: 10px; text-decoration: none; font-weight: 500; }
+    .user-actions.compact { display: flex; gap: 0.8rem; }
+    .user-btn, .donate-btn { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.8rem; border-radius: 10px; text-decoration: none; font-weight: 500; }
     .user-btn { background: var(--background-light); color: var(--text-dark); border: 1px solid var(--border-light); }
     .user-btn:hover { background: var(--primary-pink); color: white; border-color: var(--primary-pink); }
     .donate-btn { background: var(--primary-pink); color: white; }
@@ -213,7 +215,7 @@ import { RouterModule } from '@angular/router';
     .close-search { background: var(--background-light); border: 1px solid var(--border-light); border-radius: 8px; padding: 0.35rem; cursor: pointer; }
 
     @media (max-width: 1200px) {
-      .nav-list { gap: 0.75rem; }
+      .nav-list { gap: 0.8rem; }
       .nav-link { padding: 0.3rem 0.6rem; }
       .logo-subtitle { display: none; }
     }
@@ -222,7 +224,7 @@ import { RouterModule } from '@angular/router';
       .main-nav { display: none; }
       .mobile-menu-toggle { display: block; }
       .user-actions.compact { display: none; }
-      .icon-btn { padding: 0.4rem; }
+      .icon-btn { padding: 0.45rem; }
       .search-popover { right: 1rem; }
     }
 

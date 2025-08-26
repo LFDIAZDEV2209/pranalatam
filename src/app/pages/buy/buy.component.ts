@@ -39,7 +39,7 @@ import { RouterModule } from '@angular/router';
       </section>
 
       <!-- Product Categories -->
-      <section class="product-categories-section">
+      <section class="product-categories-section" id="categorias">
         <div class="container">
           <h2 class="section-title">¿Qué te gustaría comprar?</h2>
           <div class="categories-grid">
@@ -220,7 +220,7 @@ import { RouterModule } from '@angular/router';
       </section>
 
       <!-- Payment Methods -->
-      <section class="payment-methods-section">
+      <section class="payment-methods-section" id="metodos-pago">
         <div class="container">
           <h2 class="section-title">Métodos de Pago Seguros</h2>
           <div class="payment-grid">
@@ -260,7 +260,7 @@ import { RouterModule } from '@angular/router';
       </section>
 
       <!-- Shipping Information -->
-      <section class="shipping-section">
+      <section class="shipping-section" id="envio">
         <div class="container">
           <div class="shipping-content">
             <div class="shipping-info">
