@@ -1,0 +1,11 @@
+# Netlify configuration for Angular
+
+[build]
+  command = "npm run build"
+  publish = "dist/pranalatam/browser"
+
+# Ensure SPA routes resolve to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
