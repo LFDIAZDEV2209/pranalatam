@@ -129,7 +129,7 @@ export class CoursesService {
           answer: 'Sí, nuestros certificados están reconocidos por la Institute for Inner Studies de Filipinas, fundada por Master Choa Kok Sui.'
         }
       ],
-      images: ['course-1-main.jpg', 'course-1-practice.jpg', 'course-1-cert.jpg'],
+      images: ['curso1.png'],
       category: 'Sanación Pránica',
       tags: ['Principiantes', 'Sanación Física', 'Desarrollo Energético'],
       status: 'Activo',
@@ -212,7 +212,7 @@ export class CoursesService {
           answer: 'Recomendamos al menos 3 meses de práctica regular del Nivel I para aprovechar al máximo este curso.'
         }
       ],
-      images: ['course-2-main.jpg'],
+      images: ['curso2.png'],
       category: 'Sanación Pránica',
       tags: ['Intermedio', 'Sanación Avanzada', 'Colores'],
       status: 'Activo',
@@ -308,7 +308,7 @@ export class CoursesService {
           answer: 'El curso en Zipaquirá incluye almuerzo y refrigerios, pero el alojamiento debe ser gestionado independientemente.'
         }
       ],
-      images: ['course-3-main.jpg', 'course-3-meditation.jpg'],
+      images: ['curso3.png'],
       category: 'Yoga Arhatic',
       tags: ['Desarrollo Espiritual', 'Meditación', 'Purificación'],
       status: 'Activo',

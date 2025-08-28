@@ -168,12 +168,15 @@ import { RouterModule } from '@angular/router';
           <h2 class="section-title">Próximos Eventos</h2>
           <div class="events-grid">
             <div class="event-card">
+              <div class="event-image">
+                <img src="/assets/certificado2.png" alt="Taller de Autosanación Pránica" class="event-image-img">
+                <div class="event-badge">PRÓXIMAMENTE</div>
+              </div>
               <div class="event-header">
                 <div class="event-date">
                   <span class="day">15</span>
                   <span class="month">Oct</span>
                 </div>
-                <div class="event-badge">PRÓXIMAMENTE</div>
               </div>
               <div class="event-body">
                 <h3>Taller de Autosanación Pránica</h3>
@@ -190,12 +193,15 @@ import { RouterModule } from '@angular/router';
             </div>
 
             <div class="event-card">
+              <div class="event-image">
+                <img src="/assets/certificado1.png" alt="Certificación Nivel 1 - Sanación Pránica" class="event-image-img">
+                <div class="event-badge">NUEVO</div>
+              </div>
               <div class="event-header">
                 <div class="event-date">
                   <span class="day">22</span>
                   <span class="month">Nov</span>
                 </div>
-                <div class="event-badge">NUEVO</div>
               </div>
               <div class="event-body">
                 <h3>Certificación Nivel 1 - Sanación Pránica</h3>
@@ -212,12 +218,15 @@ import { RouterModule } from '@angular/router';
             </div>
 
             <div class="event-card">
+              <div class="event-image">
+                <img src="/assets/certificado3.png" alt="Meditación de Fin de Año" class="event-image-img">
+                <div class="event-badge">ESPECIAL</div>
+              </div>
               <div class="event-header">
                 <div class="event-date">
                   <span class="day">10</span>
                   <span class="month">Dic</span>
                 </div>
-                <div class="event-badge">ESPECIAL</div>
               </div>
               <div class="event-body">
                 <h3>Meditación de Fin de Año</h3>
@@ -317,9 +326,32 @@ import { RouterModule } from '@angular/router';
     .events-hero {
       min-height: 80vh;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       position: relative;
       overflow: hidden;
+    }
+
+    .hero-banner {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--background-white);
+      padding: 2rem 0;
+    }
+
+    .banner-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      align-items: center;
     }
 
     .hero-content {
@@ -327,6 +359,7 @@ import { RouterModule } from '@angular/router';
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       align-items: center;
+      width: 100%;
     }
 
     .hero-title {
@@ -605,11 +638,28 @@ import { RouterModule } from '@angular/router';
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     }
 
+    .event-image {
+      height: 200px;
+      background: var(--gradient-spiritual);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .event-image-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
     .event-header {
       background: var(--gradient-spiritual);
       padding: 1.5rem;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
     }
 
@@ -632,6 +682,9 @@ import { RouterModule } from '@angular/router';
     }
 
     .event-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
       background: var(--primary-pink);
       color: white;
       padding: 0.25rem 0.75rem;

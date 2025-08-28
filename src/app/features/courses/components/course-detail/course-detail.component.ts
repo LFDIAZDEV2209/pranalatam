@@ -16,11 +16,13 @@ import { CoursesService } from '../../services/courses.service';
         <p>{{ course?.subtitle }}</p>
       </div>
       
-      <div class="course-content" *ngIf="course">
-        <div class="course-info">
-          <p>{{ course.description }}</p>
+      @if (course) {
+        <div class="course-content">
+          <div class="course-info">
+            <p>{{ course.description }}</p>
+          </div>
         </div>
-      </div>
+      }
     </div>
   `,
   styles: [`

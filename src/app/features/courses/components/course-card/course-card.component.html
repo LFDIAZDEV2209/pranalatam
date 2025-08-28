@@ -1,7 +1,12 @@
 <div class="course-card">
   <!-- Imagen del curso -->
   <div class="course-image">
-    <div class="image-placeholder" [class]="getImageClass()">
+    <img *ngIf="course.images && course.images.length > 0" 
+         [src]="'assets/' + course.images[0]" 
+         [alt]="course.title"
+         class="course-image-img">
+    <div *ngIf="!course.images || course.images.length === 0" 
+         class="image-placeholder" [class]="getImageClass()">
       <div class="image-content">
         <div class="course-icon" [innerHTML]="getCourseIcon()"></div>
         <span class="image-label">{{ course.title }}</span>

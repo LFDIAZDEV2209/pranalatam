@@ -39,12 +39,7 @@ import { RouterModule } from '@angular/router';
             <div class="hero-image">
               <div class="meditation-figure">
                 <div class="figure-circle">
-                  <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                    <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                    <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                  </svg>
+                  <img src="/assets/perfil.png" alt="Perfil" class="perfil-image">
                 </div>
               </div>
             </div>
@@ -109,6 +104,7 @@ import { RouterModule } from '@angular/router';
           <div class="courses-grid">
             <div class="course-preview-card">
               <div class="course-image">
+                <img src="/assets/curso1.png" alt="Fundamentos de Sanación Pránica" class="course-image-img">
                 <div class="course-badge">HOT</div>
                 <div class="course-level">Básico</div>
               </div>
@@ -126,6 +122,7 @@ import { RouterModule } from '@angular/router';
             </div>
             <div class="course-preview-card">
               <div class="course-image">
+                <img src="/assets/curso2.png" alt="Yoga Arhatic Avanzado" class="course-image-img">
                 <div class="course-badge">NUEVO</div>
                 <div class="course-level">Intermedio</div>
               </div>
@@ -143,6 +140,7 @@ import { RouterModule } from '@angular/router';
             </div>
             <div class="course-preview-card">
               <div class="course-image">
+                <img src="/assets/curso3.png" alt="Maestría en Psicoterapia Pránica" class="course-image-img">
                 <div class="course-badge">POPULAR</div>
                 <div class="course-level">Avanzado</div>
               </div>
@@ -154,6 +152,72 @@ import { RouterModule } from '@angular/router';
                   <span class="course-format">Presencial</span>
                 </div>
                 <a routerLink="/cursos/maestria-psicoterapia-pranica" class="btn btn-primary btn-sm">
+                  Más Información
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications Section -->
+      <section class="certifications-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Certificaciones Disponibles</h2>
+            <a routerLink="/eventos" class="btn btn-outline">Ver Todas las Certificaciones</a>
+          </div>
+          <div class="certifications-grid">
+            <div class="certification-card">
+              <div class="certification-image">
+                <img src="/assets/certificado1.png" alt="Certificación Nivel 1 Sanación Pránica" class="certification-image-img">
+                <div class="certification-badge">NIVEL 1</div>
+                <div class="certification-type">Certificación</div>
+              </div>
+              <div class="certification-content">
+                <h3>Certificación Nivel 1 Sanación Pránica</h3>
+                <p>Programa oficial de certificación en Sanación Pránica Nivel 1, reconocido internacionalmente.</p>
+                <div class="certification-meta">
+                  <span class="certification-duration">2 días</span>
+                  <span class="certification-format">Presencial</span>
+                </div>
+                <a routerLink="/eventos/certificacion-nivel-1" class="btn btn-primary btn-sm">
+                  Más Información
+                </a>
+              </div>
+            </div>
+            <div class="certification-card">
+              <div class="certification-image">
+                <img src="/assets/certificado2.png" alt="Taller de Autosanación Pránica" class="certification-image-img">
+                <div class="certification-badge">TALLER</div>
+                <div class="certification-type">Workshop</div>
+              </div>
+              <div class="certification-content">
+                <h3>Taller de Autosanación Pránica</h3>
+                <p>Aprende técnicas de autosanación pránica para tu bienestar personal y desarrollo espiritual.</p>
+                <div class="certification-meta">
+                  <span class="certification-duration">1 día</span>
+                  <span class="certification-format">Presencial</span>
+                </div>
+                <a routerLink="/eventos/taller-autosanacion" class="btn btn-primary btn-sm">
+                  Más Información
+                </a>
+              </div>
+            </div>
+            <div class="certification-card">
+              <div class="certification-image">
+                <img src="/assets/certificado3.png" alt="Meditación de Fin de Año" class="certification-image-img">
+                <div class="certification-badge">ESPECIAL</div>
+                <div class="certification-type">Meditación</div>
+              </div>
+              <div class="certification-content">
+                <h3>Meditación de Fin de Año</h3>
+                <p>Una experiencia transformadora de meditación para cerrar el año con gratitud y renovación espiritual.</p>
+                <div class="certification-meta">
+                  <span class="certification-duration">2 horas</span>
+                  <span class="certification-format">Presencial</span>
+                </div>
+                <a routerLink="/eventos/meditacion-fin-ano" class="btn btn-primary btn-sm">
                   Más Información
                 </a>
               </div>
@@ -238,7 +302,7 @@ import { RouterModule } from '@angular/router';
     .hero-section {
       min-height: 100vh;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       position: relative;
       overflow: hidden;
     }
@@ -248,6 +312,9 @@ import { RouterModule } from '@angular/router';
       margin: 0 auto;
       padding: 0 2rem;
       width: 100%;
+      flex: 1;
+      display: flex;
+      align-items: center;
     }
 
     .hero-content {
@@ -335,6 +402,15 @@ import { RouterModule } from '@angular/router';
       justify-content: center;
       color: white;
       animation: float 6s ease-in-out infinite;
+      overflow: hidden;
+    }
+
+    .perfil-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
     }
 
     @keyframes float {
@@ -476,6 +552,14 @@ import { RouterModule } from '@angular/router';
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+    }
+
+    .course-image-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
     .course-badge {
@@ -533,10 +617,107 @@ import { RouterModule } from '@angular/router';
       color: var(--text-medium);
     }
 
+    /* Certifications Section */
+    .certifications-section {
+      padding: 6rem 0;
+      background: var(--background-white);
+    }
+
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .certification-card {
+      background: var(--background-white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .certification-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .certification-image {
+      height: 200px;
+      background: var(--gradient-spiritual);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .certification-image-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .certification-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--primary-gold);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .certification-type {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      background: var(--primary-blue);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .certification-content {
+      padding: 1.5rem;
+    }
+
+    .certification-content h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-dark);
+    }
+
+    .certification-content p {
+      color: var(--text-medium);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .certification-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .certification-duration,
+    .certification-format {
+      background: var(--background-light);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      color: var(--text-medium);
+    }
+
     /* Testimonials Section */
     .testimonials-section {
       padding: 6rem 0;
-      background: var(--background-white);
+      background: var(--background-light);
     }
 
     .testimonials-grid {

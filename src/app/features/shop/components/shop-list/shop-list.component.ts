@@ -11,6 +11,9 @@ import { RouterModule } from '@angular/router';
     <main class="shop-page">
       <!-- Hero Section -->
       <section class="shop-hero meditation-bg">
+        <div class="hero-banner">
+          <img src="/assets/banner.png" alt="Banner Promocional" class="banner-image">
+        </div>
         <div class="container">
           <div class="hero-content">
             <div class="hero-text">
@@ -29,8 +32,8 @@ import { RouterModule } from '@angular/router';
             </div>
             <div class="hero-image">
               <div class="master-portrait">
-                <div class="portrait-circle">
-                  <i class="bi bi-person-circle"></i>
+                <div class="figure-circle">
+                  <img src="/assets/perfil.png" alt="Master Choa Kok Sui" class="perfil-image">
                 </div>
                 <div class="master-info">
                   <h3>Master Choa Kok Sui</h3>
@@ -86,6 +89,7 @@ import { RouterModule } from '@angular/router';
           <div class="books-grid">
             <div class="book-card">
               <div class="book-image">
+                <img src="/assets/libro1.png" alt="ALCANZAR LA UNICIDAD CON EL ALMA SUPERIOR" class="book-image-img">
                 <div class="book-badge">BESTSELLER</div>
                 <div class="book-category">Libros</div>
               </div>
@@ -102,6 +106,7 @@ import { RouterModule } from '@angular/router';
 
             <div class="book-card">
               <div class="book-image">
+                <img src="/assets/libro2.png" alt="AUTODEFENSA PSIQUICA PRACTICA PARA EL HOGAR Y EL TRABAJO" class="book-image-img">
                 <div class="book-badge">POPULAR</div>
                 <div class="book-category">Libros</div>
               </div>
@@ -118,6 +123,7 @@ import { RouterModule } from '@angular/router';
 
             <div class="book-card">
               <div class="book-image">
+                <img src="/assets/libro3.png" alt="EL ORIGEN DE LA SANACIÓN PRÁNICA MODERNA Y EL ARHATIC YOGA" class="book-image-img">
                 <div class="book-badge">NUEVO</div>
                 <div class="book-category">Libros</div>
               </div>
@@ -134,6 +140,7 @@ import { RouterModule } from '@angular/router';
 
             <div class="book-card">
               <div class="book-image">
+                <img src="/assets/libro4.png" alt="LA ESENCIA ESPIRITUAL DEL HOMBRE" class="book-image-img">
                 <div class="book-badge">CLÁSICO</div>
                 <div class="book-category">Libros</div>
               </div>
@@ -150,6 +157,7 @@ import { RouterModule } from '@angular/router';
 
             <div class="book-card">
               <div class="book-image">
+                <img src="/assets/libro5.png" alt="La revelación de las Enseñanzas Interiores del HINDUISMO" class="book-image-img">
                 <div class="book-badge">ESPECIAL</div>
                 <div class="book-category">Libros</div>
               </div>
@@ -312,9 +320,32 @@ import { RouterModule } from '@angular/router';
     .shop-hero {
       min-height: 80vh;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       position: relative;
       overflow: hidden;
+    }
+
+    .hero-banner {
+      width: 100%;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--background-white);
+      padding: 2rem 0;
+    }
+
+    .banner-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      align-items: center;
     }
 
     .hero-content {
@@ -322,6 +353,7 @@ import { RouterModule } from '@angular/router';
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       align-items: center;
+      width: 100%;
     }
 
     .hero-title {
@@ -383,6 +415,15 @@ import { RouterModule } from '@angular/router';
       color: white;
       box-shadow: 0 8px 30px rgba(233, 30, 99, 0.3);
       font-size: 4rem;
+      overflow: hidden;
+    }
+
+    .perfil-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
     }
 
     .master-info h3 {
@@ -487,6 +528,14 @@ import { RouterModule } from '@angular/router';
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+    }
+
+    .book-image-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
     .book-badge {
