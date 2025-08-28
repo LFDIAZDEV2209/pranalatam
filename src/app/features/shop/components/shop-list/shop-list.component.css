@@ -29,7 +29,7 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  background: var(--background-light);
+  background: var(--gradient-spiritual);
 }
 
 .shop-hero .container {

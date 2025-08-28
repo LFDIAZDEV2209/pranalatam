@@ -337,6 +337,7 @@ import { RouterModule } from '@angular/router';
       align-items: center;
       position: relative;
       overflow: hidden;
+      background: var(--gradient-spiritual);
     }
 
     .hero-content {
