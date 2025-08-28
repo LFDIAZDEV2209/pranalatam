@@ -20,7 +20,7 @@ export const routes: Routes = [
   },
   {
     path: 'tienda',
-    loadChildren: () => import('./features/shop/shop.routes').then(m => m.shopRoutes)
+    loadChildren: () => import('./features/shop/shop.routes').then(m => m.SHOP_ROUTES)
   },
   {
     path: 'comprar',

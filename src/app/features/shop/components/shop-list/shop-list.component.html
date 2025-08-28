@@ -35,7 +35,10 @@
     <!-- Categories Section -->
     <section class="categories-section">
       <div class="container">
-        <h2 class="section-title">Categorías de Productos</h2>
+        <h2 class="section-title" *ngIf="!currentCategory">Categorías de Productos</h2>
+        <h2 class="section-title" *ngIf="currentCategory === 'libros'">Libros de Sanación Pránica</h2>
+        <h2 class="section-title" *ngIf="currentCategory === 'bolsilibros'">Bolsilibros - Guías Prácticas</h2>
+        <h2 class="section-title" *ngIf="currentCategory === 'mantras'">Mantras Sagrados</h2>
         <div class="categories-grid">
           <div class="category-card" routerLink="/tienda/libros">
             <div class="category-icon">
@@ -51,26 +54,26 @@
             <h3>Bolsilibros</h3>
             <p>Guías prácticas y manuales de bolsillo</p>
           </div>
-          <div class="category-card" routerLink="/tienda/mantras">
+          <div class="category-card" (click)="goToMeditations()">
             <div class="category-icon">
               <i class="bi bi-music-note-beamed text-warning"></i>
             </div>
             <h3>Mantras</h3>
             <p>Sonidos sagrados para la sanación energética</p>
           </div>
-          <div class="category-card" routerLink="/tienda/meditaciones">
-            <div class="category-icon">
-              <i class="bi bi-heart text-danger"></i>
-            </div>
-            <h3>Meditaciones</h3>
-            <p>Prácticas guiadas por Master Choa Kok Sui</p>
-          </div>
+                     <div class="category-card" (click)="goToSpecial()">
+             <div class="category-icon">
+               <i class="bi bi-heart text-danger"></i>
+             </div>
+             <h3>Contenido Especial</h3>
+             <p>Corazones Gemelos, Arhatic y Especiales</p>
+           </div>
         </div>
       </div>
     </section>
   
     <!-- Featured Books Section -->
-    <section class="featured-books-section">
+    <section class="featured-books-section" *ngIf="!currentCategory || currentCategory === 'libros'">
       <div class="container">
         <h2 class="section-title">Libros Destacados</h2>
         <div class="books-grid">
@@ -159,11 +162,16 @@
             </div>
           </div>
         </div>
+        <div class="category-actions" *ngIf="currentCategory === 'libros'">
+          <a routerLink="/tienda" class="btn btn-outline btn-lg">
+            <i class="bi bi-arrow-left me-2"></i>Volver a la Tienda
+          </a>
+        </div>
       </div>
     </section>
   
     <!-- Special Meditations Section -->
-    <section class="meditations-section">
+    <section class="meditations-section" *ngIf="!currentCategory">
       <div class="container">
         <h2 class="section-title">Meditaciones Especiales con Master Choa Kok Sui</h2>
         <div class="meditations-grid">
@@ -189,30 +197,30 @@
             </div>
           </div>
   
-          <div class="meditation-card">
-            <div class="meditation-header">
-              <h3>Meditaciones Arhatic</h3>
-              <span class="meditation-type">Serie Completa</span>
-            </div>
-            <p class="meditation-description">
-              Colección completa de meditaciones arhatic para el desarrollo espiritual avanzado 
-              y la elevación de la conciencia.
-            </p>
-            <div class="meditation-author">
-              <strong>Master Choa Kok Sui</strong>
-            </div>
-            <div class="meditation-actions">
-              <button class="btn btn-primary btn-lg">
-                <i class="bi bi-collection me-2"></i>Ver Colección
-              </button>
-            </div>
-          </div>
+                     <div class="meditation-card">
+             <div class="meditation-header">
+               <h3>Contenido Especial</h3>
+               <span class="meditation-type">Ver Todo</span>
+             </div>
+             <p class="meditation-description">
+               Descubre Corazones Gemelos, Arhatic y contenido exclusivo de Master Choa Kok Sui. 
+               Las enseñanzas más profundas y transformadoras.
+             </p>
+             <div class="meditation-author">
+               <strong>Master Choa Kok Sui</strong>
+             </div>
+             <div class="meditation-actions">
+               <a routerLink="/tienda/especial" class="btn btn-primary btn-lg">
+                 <i class="bi bi-collection me-2"></i>Ver Contenido Especial
+               </a>
+             </div>
+           </div>
         </div>
       </div>
     </section>
   
     <!-- Bolsilibros Section -->
-    <section class="bolsilibros-section">
+    <section class="bolsilibros-section" *ngIf="!currentCategory || currentCategory === 'bolsilibros'">
       <div class="container">
         <h2 class="section-title">Bolsilibros - Guías Prácticas</h2>
         <p class="section-subtitle">Manuales de bolsillo para llevar la sanación pránica contigo</p>
@@ -332,11 +340,97 @@
               <i class="bi bi-collection me-2"></i>Ver Todos los Bolsilibros
             </a>
           </div>
-        </div>
-      </div>
-    </section>
-  
-    <!-- Newsletter Section -->
+                 </div>
+         <div class="category-actions" *ngIf="currentCategory === 'bolsilibros'">
+           <a routerLink="/tienda" class="btn btn-outline btn-lg">
+             <i class="bi bi-arrow-left me-2"></i>Volver a la Tienda
+           </a>
+         </div>
+       </div>
+     </section>
+   
+     <!-- Mantras Section -->
+     <section class="mantras-section" *ngIf="showMantras">
+       <div class="container">
+         <h2 class="section-title">Mantras Sagrados para la Sanación</h2>
+         <p class="section-subtitle">Sonidos sagrados que transforman la energía y elevan la conciencia</p>
+         
+         <div class="mantras-grid">
+           <div class="mantra-card">
+             <div class="mantra-image">
+               <img src="/assets/libro3.png" alt="Mantra OM" class="mantra-image-img">
+               <div class="mantra-badge">PRINCIPAL</div>
+               <div class="mantra-category">Mantra</div>
+             </div>
+             <div class="mantra-content">
+               <h3>Mantra OM - Sonido Universal</h3>
+               <p class="mantra-author">Master Choa Kok Sui</p>
+               <p class="mantra-description">El mantra más poderoso para la sanación y elevación espiritual. Incluye audio guiado y explicaciones detalladas.</p>
+               <div class="mantra-features">
+                 <span><i class="bi bi-music-note text-warning me-1"></i>Audio incluido</span>
+                 <span><i class="bi bi-book text-primary me-1"></i>Guía completa</span>
+                 <span><i class="bi bi-heart text-danger me-1"></i>Sanación del corazón</span>
+               </div>
+               <div class="mantra-price">$25.00</div>
+               <button class="btn btn-primary btn-sm w-100">
+                 <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+               </button>
+             </div>
+           </div>
+
+           <div class="mantra-card">
+             <div class="mantra-image">
+               <img src="/assets/libro4.png" alt="Mantras de Protección" class="mantra-image-img">
+               <div class="mantra-badge">PROTECCIÓN</div>
+               <div class="mantra-category">Mantra</div>
+             </div>
+             <div class="mantra-content">
+               <h3>Mantras de Protección Energética</h3>
+               <p class="mantra-author">Master Choa Kok Sui</p>
+               <p class="mantra-description">Colección de mantras para crear escudos de protección y limpiar espacios energéticamente.</p>
+               <div class="mantra-features">
+                 <span><i class="bi bi-shield-check text-success me-1"></i>Protección total</span>
+                 <span><i class="bi bi-house text-primary me-1"></i>Para espacios</span>
+                 <span><i class="bi bi-person text-warning me-1"></i>Para personas</span>
+               </div>
+               <div class="mantra-price">$22.00</div>
+               <button class="btn btn-primary btn-sm w-100">
+                 <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+               </button>
+             </div>
+           </div>
+
+           <div class="mantra-card">
+             <div class="mantra-image">
+               <img src="/assets/libro5.png" alt="Mantras de Sanación" class="mantra-image-img">
+               <div class="mantra-badge">SANACIÓN</div>
+               <div class="mantra-category">Mantra</div>
+             </div>
+             <div class="mantra-content">
+               <h3>Mantras de Sanación Específica</h3>
+               <p class="mantra-author">Master Choa Kok Sui</p>
+               <p class="mantra-description">Mantras especializados para diferentes tipos de sanación: física, emocional y mental.</p>
+               <div class="mantra-features">
+                 <span><i class="bi bi-heart-pulse text-success me-1"></i>Sanación física</span>
+                 <span><i class="bi bi-brain text-primary me-1"></i>Sanación mental</span>
+                 <span><i class="bi bi-emoji-smile text-warning me-1"></i>Sanación emocional</span>
+               </div>
+               <div class="mantra-price">$28.00</div>
+               <button class="btn btn-primary btn-sm w-100">
+                 <i class="bi bi-cart-plus me-2"></i>Agregar al Carrito
+               </button>
+             </div>
+           </div>
+         </div>
+         <div class="category-actions" *ngIf="currentCategory === 'mantras'">
+           <a routerLink="/tienda" class="btn btn-outline btn-lg">
+             <i class="bi bi-arrow-left me-2"></i>Volver a la Tienda
+           </a>
+         </div>
+       </div>
+     </section>
+   
+     <!-- Newsletter Section -->
     <section class="newsletter-section">
       <div class="container">
         <div class="newsletter-content">
