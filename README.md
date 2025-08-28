@@ -4,7 +4,19 @@
 
 ### **Problema Resuelto**
 - ✅ **Error de Netlify**: Archivos CSS excedían el límite de presupuesto (4kB/8kB)
-- ✅ **Solución**: Aumentado límites a 12kB/20kB y optimización de CSS
+- ✅ **Error de Node.js**: Versión mínima requerida v20.19 o v22.12
+- ✅ **Solución**: Aumentado límites a 12kB/20kB, optimización CSS y Node.js v20
+
+### **Requisitos del Sistema**
+
+#### **Node.js**
+- **Versión mínima**: v20.19 o v22.12
+- **Versión recomendada**: v20.x (LTS)
+- **Configuración Netlify**: `NODE_VERSION = "20"`
+
+#### **Angular CLI**
+- **Versión**: 20.2.0
+- **Compatibilidad**: Node.js v20+
 
 ### **Optimizaciones CSS Implementadas**
 
@@ -51,10 +63,16 @@ npm run build:netlify   # Build optimizado para Netlify
 ```
 
 #### **Configuración Netlify (netlify.toml)**
+- **Node.js 20** especificado explícitamente
 - **CSS bundling** y **minificación** automática
 - **JavaScript optimization** habilitada
 - **Image compression** activada
-- **Node.js 18** especificado
+
+#### **Archivos de Versión Node.js**
+```
+.nvmrc          # Node.js v20
+.node-version   # Node.js v20 (respaldo)
+```
 
 ### **Estructura de Archivos Optimizada**
 
@@ -94,6 +112,9 @@ src/
 ### **Comandos de Desarrollo**
 
 ```bash
+# Verificar versión de Node.js
+node --version  # Debe ser v20.19+ o v22.12+
+
 # Instalación de dependencias
 npm install
 
@@ -116,13 +137,18 @@ npm test
 1. **Connect repository** a Netlify
 2. **Build command**: `npm run build:netlify`
 3. **Publish directory**: `dist/pranalatam/browser`
-4. **Node version**: 18 (automático)
+4. **Node version**: 20 (automático desde .nvmrc)
 
 #### **Variables de Entorno**
 ```bash
-NODE_VERSION=18
+NODE_VERSION=20
 NPM_FLAGS=--legacy-peer-deps
 ```
+
+#### **Archivos de Configuración**
+- `.nvmrc` - Especifica Node.js v20
+- `.node-version` - Respaldo para Node.js v20
+- `netlify.toml` - Configuración completa de Netlify
 
 ### **Monitoreo de Performance**
 
@@ -143,6 +169,7 @@ NPM_FLAGS=--legacy-peer-deps
 - **CSS bundle size** monitoring
 - **Performance metrics** tracking
 - **Mobile usability** testing
+- **Node.js version** verification
 
 #### **Optimizaciones Futuras**
 - **CSS-in-JS** para componentes críticos
@@ -165,10 +192,23 @@ npm run build:netlify
 ng build --configuration production --verbose
 ```
 
+#### **Error: Node.js Version Mismatch**
+```bash
+# Verificar versión local
+node --version
+
+# Actualizar Node.js a v20+
+nvm install 20
+nvm use 20
+
+# Verificar versión
+node --version  # Debe ser v20.19+ o v22.12+
+```
+
 #### **Error: Build Failed**
 ```bash
 # Verificar Node.js version
-node --version  # Debe ser 18+
+node --version  # Debe ser v20.19+ o v22.12+
 
 # Limpiar node_modules
 rm -rf node_modules package-lock.json
@@ -178,15 +218,38 @@ npm install
 npm run build:netlify
 ```
 
+### **Verificación de Versiones**
+
+#### **Local Development**
+```bash
+# Node.js
+node --version     # v20.19+ o v22.12+
+
+# npm
+npm --version      # 10+
+
+# Angular CLI
+ng version         # 20.2.0
+```
+
+#### **Netlify Build**
+```bash
+# Verificar en logs de build
+Node.js version v20.x.x detected ✓
+Angular CLI requirements met ✓
+```
+
 ### **Contacto y Soporte**
 
 Para problemas de deployment o optimización:
 - **Issues**: Crear issue en el repositorio
 - **Documentation**: Revisar este README
 - **Performance**: Usar Lighthouse para análisis
+- **Node.js**: Verificar versión con `node --version`
 
 ---
 
 **Estado**: ✅ **Optimizado para Producción**
+**Node.js**: ✅ **v20.x Compatible**
 **Última Actualización**: Diciembre 2024
 **Versión**: 1.0.0
