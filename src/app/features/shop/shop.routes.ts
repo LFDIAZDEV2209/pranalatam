@@ -1,35 +1,34 @@
 // features/shop/shop.routes.ts
 import { Routes } from '@angular/router';
-import { ShopListComponent } from './components/shop-list/shop-list.component';
 
 export const shopRoutes: Routes = [
   {
     path: '',
-    component: ShopListComponent
+    loadComponent: () => import('./components/shop-list/shop-list.component').then(m => m.ShopListComponent)
   },
   {
     path: 'libros',
-    component: ShopListComponent
+    loadComponent: () => import('./components/shop-list/shop-list.component').then(m => m.ShopListComponent)
   },
   {
     path: 'bolsilibros',
-    component: ShopListComponent
+    loadComponent: () => import('./components/shop-list/shop-list.component').then(m => m.ShopListComponent)
   },
   {
     path: 'mantras',
-    component: ShopListComponent
+    loadComponent: () => import('./components/shop-list/shop-list.component').then(m => m.ShopListComponent)
   },
   {
     path: 'meditacion-corazones-gemelos',
-    component: ShopListComponent
+    loadComponent: () => import('./components/shop-list/shop-list.component').then(m => m.ShopListComponent)
   },
   {
     path: 'meditaciones-arhatic',
-    component: ShopListComponent
+    loadComponent: () => import('./components/shop-list/shop-list.component').then(m => m.ShopListComponent)
   },
   {
     path: 'meditaciones-especiales',
-    component: ShopListComponent
+    loadComponent: () => import('./components/shop-list/shop-list.component').then(m => m.ShopListComponent)
   }
 ];
 

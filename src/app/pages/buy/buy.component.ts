@@ -328,9 +328,7 @@ import { RouterModule } from '@angular/router';
     </main>
   `,
   styles: [`
-    .buy-page {
-      padding-top: 80px;
-    }
+
 
     /* Hero Section */
     .buy-hero {

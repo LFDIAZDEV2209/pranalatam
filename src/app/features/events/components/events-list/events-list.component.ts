@@ -318,9 +318,7 @@ import { RouterModule } from '@angular/router';
     </main>
   `,
   styles: [`
-    .events-page {
-      padding-top: 80px;
-    }
+
 
     /* Hero Section */
     .events-hero {

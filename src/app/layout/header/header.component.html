@@ -1,0 +1,153 @@
+<header class="header">
+  <div class="header-top">
+    <div class="container">
+      <div class="top-content">
+        <div class="contact-info">
+          <span><i class="bi bi-telephone me-2"></i>+57 300 123 4567</span>
+          <span><i class="bi bi-envelope me-2"></i>info@pranalatam.org</span>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-section" routerLink="/">
+          <div class="logo-icon">
+            <i class="bi bi-heart-pulse"></i>
+          </div>
+          <div class="logo-text">
+            <h1 class="logo-title">PRANALATAM</h1>
+            <p class="logo-subtitle">FUNDACIÓN SANACIÓN PRÁNICA LATINOAMERICANA</p>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
+                <i class="bi bi-house me-1"></i>Inicio
+              </a>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a routerLink="/tienda" class="nav-link dropdown-toggle">
+                <i class="bi bi-shop me-1"></i>Tienda<i class="bi bi-chevron-down"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a routerLink="/tienda" class="dropdown-item"><i class="bi bi-grid me-2"></i>Todos los Productos</a></li>
+                <li><a routerLink="/tienda/libros" class="dropdown-item"><i class="bi bi-book me-2"></i>Libros</a></li>
+                <li><a routerLink="/tienda/bolsilibros" class="dropdown-item"><i class="bi bi-journal-text me-2"></i>Bolsilibros</a></li>
+                <li><a routerLink="/tienda/mantras" class="dropdown-item"><i class="bi bi-music-note-beamed me-2"></i>Mantras</a></li>
+                <li><a routerLink="/tienda/meditacion-corazones-gemelos" class="dropdown-item"><i class="bi bi-heart me-2"></i>Corazones Gemelos</a></li>
+                <li><a routerLink="/tienda/meditaciones-arhatic" class="dropdown-item"><i class="bi bi-person-meditation me-2"></i>Arhatic</a></li>
+                <li><a routerLink="/tienda/meditaciones-especiales" class="dropdown-item"><i class="bi bi-stars me-2"></i>Especiales</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a routerLink="/eventos" class="nav-link dropdown-toggle">
+                <i class="bi bi-calendar-event me-1"></i>Eventos<i class="bi bi-chevron-down"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a routerLink="/eventos" class="dropdown-item"><i class="bi bi-calendar-week me-2"></i>Todos</a></li>
+                <li><a routerLink="/eventos/retiros" class="dropdown-item"><i class="bi bi-house-heart me-2"></i>Retiros</a></li>
+                <li><a routerLink="/eventos/talleres" class="dropdown-item"><i class="bi bi-calendar-week me-2"></i>Talleres</a></li>
+                <li><a routerLink="/eventos/certificaciones" class="dropdown-item"><i class="bi bi-award me-2"></i>Certificaciones</a></li>
+                <li><a routerLink="/eventos/encuentros" class="dropdown-item"><i class="bi bi-people me-2"></i>Encuentros</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a routerLink="/cursos" class="nav-link dropdown-toggle">
+                <i class="bi bi-mortarboard me-1"></i>Formación<i class="bi bi-chevron-down"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a routerLink="/cursos" class="dropdown-item"><i class="bi bi-mortarboard me-2"></i>Cursos</a></li>
+                <li><a routerLink="/meditaciones" class="dropdown-item"><i class="bi bi-headphones me-2"></i>Meditaciones</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a routerLink="/comprar" class="nav-link dropdown-toggle">
+                <i class="bi bi-cart-check me-1"></i>Comprar<i class="bi bi-chevron-down"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a routerLink="/comprar" class="dropdown-item"><i class="bi bi-cart me-2"></i>Proceso de Compra</a></li>
+                <li><a routerLink="/comprar#categorias" class="dropdown-item"><i class="bi bi-grid me-2"></i>Categorías</a></li>
+                <li><a routerLink="/comprar#metodos-pago" class="dropdown-item"><i class="bi bi-credit-card me-2"></i>Métodos de Pago</a></li>
+                <li><a routerLink="/comprar#envio" class="dropdown-item"><i class="bi bi-truck me-2"></i>Envío</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a routerLink="/acerca" class="nav-link dropdown-toggle">
+                <i class="bi bi-three-dots me-1"></i>Más<i class="bi bi-chevron-down"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a routerLink="/acerca" class="dropdown-item"><i class="bi bi-info-circle me-2"></i>Acerca</a></li>
+                <li><a routerLink="/contacto" class="dropdown-item"><i class="bi bi-envelope me-2"></i>Contacto</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button class="icon-btn" (click)="toggleSearch()" aria-label="Buscar">
+            <i class="bi bi-search"></i>
+          </button>
+          <div class="user-actions compact">
+            <a routerLink="/login" class="user-btn" aria-label="Iniciar Sesión">
+              <i class="bi bi-person-circle"></i>
+            </a>
+            <a routerLink="/donaciones" class="donate-btn" aria-label="Donar">
+              <i class="bi bi-heart"></i>
+            </a>
+          </div>
+
+          <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <div class="search-popover" *ngIf="isSearchOpen">
+            <input type="text" placeholder="Buscar..." class="search-input-pop">
+            <button class="close-search" (click)="toggleSearch()" aria-label="Cerrar búsqueda">
+              <i class="bi bi-x"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-menu" [class.active]="isMobileMenuOpen">
+    <div class="mobile-menu-header">
+      <h3>Menú</h3>
+      <button class="close-btn" (click)="closeMobileMenu()">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+    
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li><a routerLink="/" (click)="closeMobileMenu()" class="mobile-nav-link"><i class="bi bi-house me-2"></i>Inicio</a></li>
+        <li><a routerLink="/tienda" (click)="closeMobileMenu()" class="mobile-nav-link"><i class="bi bi-shop me-2"></i>Tienda</a></li>
+        <li><a routerLink="/eventos" (click)="closeMobileMenu()" class="mobile-nav-link"><i class="bi bi-calendar-event me-2"></i>Eventos</a></li>
+        <li><a routerLink="/comprar" (click)="closeMobileMenu()" class="mobile-nav-link"><i class="bi bi-cart-check me-2"></i>Comprar</a></li>
+        <li><a routerLink="/cursos" (click)="closeMobileMenu()" class="mobile-nav-link"><i class="bi bi-mortarboard me-2"></i>Cursos</a></li>
+        <li><a routerLink="/meditaciones" (click)="closeMobileMenu()" class="mobile-nav-link"><i class="bi bi-headphones me-2"></i>Meditaciones</a></li>
+        <li><a routerLink="/acerca" (click)="closeMobileMenu()" class="mobile-nav-link"><i class="bi bi-info-circle me-2"></i>Acerca</a></li>
+        <li><a routerLink="/contacto" (click)="closeMobileMenu()" class="mobile-nav-link"><i class="bi bi-envelope me-2"></i>Contacto</a></li>
+        <li><a routerLink="/login" (click)="closeMobileMenu()" class="mobile-nav-link"><i class="bi bi-person-circle me-2"></i>Iniciar Sesión</a></li>
+        <li><a routerLink="/donaciones" (click)="closeMobileMenu()" class="mobile-nav-link"><i class="bi bi-heart me-2"></i>Donar</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
