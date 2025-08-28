@@ -5,8 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration production",
+    "build:netlify": "ng build --configuration production --aot --build-optimizer",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "postbuild": "echo 'Build completed successfully'"
   },
   "prettier": {
     "printWidth": 100,
