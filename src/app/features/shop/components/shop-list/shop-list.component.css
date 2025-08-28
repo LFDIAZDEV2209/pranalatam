@@ -852,105 +852,434 @@
   .meditations-grid {
     grid-template-columns: 1fr;
   }
+  
+  /* Ajustes para tablets */
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .section-title {
+    font-size: 2.25rem;
+  }
 }
 
-  @media (max-width: 768px) {
-    .container {
-      padding: 0 1rem;
-    }
-  
-    .shop-hero .container {
-      padding: 2rem 1rem;
-    }
-  
-    .hero-title {
-      font-size: 2.5rem;
-    }
-  
-    .hero-subtitle {
-      font-size: 1.5rem;
-    }
-  
-    .section-title {
-      font-size: 2rem;
-    }
-  
-    .portrait-circle {
-      width: 150px;
-      height: 150px;
-    }
-  
-    .bolsilibros-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-  
-    .mantras-grid {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-  
-    .bolsilibros-cta {
-      padding: 2rem;
-    }
-  
-    .benefits-grid {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
-    }
-  
-    .donation-actions {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .newsletter-form .form-group {
-      flex-direction: column;
-    }
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
   }
 
-  @media (max-width: 480px) {
-    .hero-title {
-      font-size: 2rem;
-    }
-  
-    .hero-subtitle {
-      font-size: 1.25rem;
-    }
-  
-    .section-title {
-      font-size: 1.75rem;
-    }
-  
-    .books-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .bolsilibros-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-  
-    .mantras-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-  
-    .bolsilibros-cta {
-      padding: 1.5rem;
-    }
-  
-    .benefits-grid {
-      grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-  
-    .meditation-actions {
-      flex-direction: column;
-    }
-  
-    .portrait-circle {
-      width: 120px;
-      height: 120px;
-    }
+  .shop-hero .container {
+    padding: 2rem 1rem;
   }
+
+  .hero-title {
+    font-size: 2.25rem;
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .hero-info {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .section-title {
+    font-size: 1.875rem;
+    margin-bottom: 3rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .portrait-circle {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .master-info h3 {
+    font-size: 1.3rem;
+  }
+  
+  .master-info p {
+    font-size: 0.9rem;
+  }
+
+  .bolsilibros-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .mantras-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .bolsilibros-cta {
+    padding: 2rem 1.5rem;
+  }
+  
+  .bolsilibros-cta h3 {
+    font-size: 1.6rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .donation-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .newsletter-form .form-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .newsletter-text h2 {
+    font-size: 2rem;
+  }
+  
+  .newsletter-text p {
+    font-size: 1.1rem;
+  }
+  
+  .trust-features-section {
+    padding: 4rem 0;
+  }
+  
+  .trust-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .trust-card {
+    padding: 1.5rem;
+  }
+  
+  .trust-icon {
+    font-size: 2.5rem;
+  }
+  
+  .trust-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .donation-cta-section {
+    padding: 4rem 0;
+  }
+  
+  .donation-content h2 {
+    font-size: 2rem;
+  }
+  
+  .donation-content p {
+    font-size: 1.1rem;
+  }
+  
+  /* Ajustes de espaciado para móvil */
+  .shop-hero,
+  .categories-section,
+  .featured-books-section,
+  .meditations-section,
+  .bolsilibros-section,
+  .mantras-section,
+  .newsletter-section,
+  .trust-features-section,
+  .donation-cta-section {
+    padding: 4rem 0;
+  }
+  
+  .categories-grid {
+    gap: 1.5rem;
+  }
+  
+  .category-card {
+    padding: 1.5rem;
+  }
+  
+  .category-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+  
+  .category-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .category-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .books-grid {
+    gap: 1.5rem;
+  }
+  
+  .book-card {
+    border-radius: 12px;
+  }
+  
+  .book-content {
+    padding: 1.25rem;
+  }
+  
+  .book-content h3 {
+    font-size: 1rem;
+  }
+  
+  .book-author {
+    font-size: 0.85rem;
+  }
+  
+  .book-description {
+    font-size: 0.85rem;
+  }
+  
+  .book-price {
+    font-size: 1.3rem;
+  }
+  
+  .meditation-card {
+    padding: 1.5rem;
+  }
+  
+  .meditation-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .meditation-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .meditation-actions .btn {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.875rem 1.25rem;
+  }
+  
+  /* Ajustes de espaciado para pantallas muy pequeñas */
+  .shop-hero,
+  .categories-section,
+  .featured-books-section,
+  .meditations-section,
+  .bolsilibros-section,
+  .mantras-section,
+  .newsletter-section,
+  .trust-features-section,
+  .donation-cta-section {
+    padding: 3rem 0;
+  }
+  
+  .categories-grid {
+    gap: 1rem;
+  }
+  
+  .category-card {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+  
+  .category-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .category-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .category-card p {
+    font-size: 0.9rem;
+  }
+  
+  .book-card {
+    border-radius: 12px;
+  }
+  
+  .book-content {
+    padding: 1rem;
+  }
+  
+  .book-content h3 {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+  
+  .book-author {
+    font-size: 0.85rem;
+  }
+  
+  .book-description {
+    font-size: 0.85rem;
+  }
+  
+  .book-price {
+    font-size: 1.2rem;
+  }
+  
+  .meditation-card {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+  
+  .meditation-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .meditation-type {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .meditation-description {
+    font-size: 0.9rem;
+  }
+  
+  .meditation-author {
+    font-size: 0.9rem;
+  }
+  
+  .newsletter-text h2 {
+    font-size: 1.75rem;
+  }
+  
+  .newsletter-text p {
+    font-size: 1rem;
+  }
+  
+  .newsletter-features span {
+    font-size: 0.9rem;
+  }
+  
+  .form-input {
+    padding: 0.875rem;
+    font-size: 0.9rem;
+  }
+  
+  .trust-features-section {
+    padding: 3rem 0;
+  }
+  
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .trust-card {
+    padding: 1.25rem;
+  }
+  
+  .trust-icon {
+    font-size: 2.25rem;
+  }
+  
+  .trust-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .trust-card p {
+    font-size: 0.9rem;
+  }
+  
+  .donation-cta-section {
+    padding: 3rem 0;
+  }
+  
+  .donation-content h2 {
+    font-size: 1.75rem;
+  }
+  
+  .donation-content p {
+    font-size: 1rem;
+  }
+  
+  .donation-actions .btn {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.875rem 1.25rem;
+  }
+  
+  .category-actions {
+    margin-top: 2rem;
+  }
+  
+  .category-actions .btn {
+    width: 100%;
+    max-width: 250px;
+    font-size: 0.9rem;
+    padding: 0.875rem 1.25rem;
+  }
+}
+
+/* ========================================
+   TOUCH IMPROVEMENTS
+   ======================================== */
+@media (hover: none) and (pointer: coarse) {
+  .category-card:hover,
+  .book-card:hover,
+  .meditation-card:hover,
+  .bolsilibro-card:hover,
+  .mantra-card:hover {
+    transform: none;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+}
+
+/* ========================================
+   PREVENT OVERFLOW
+   ======================================== */
+.shop-page {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.container {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ========================================
+   IMPROVE TOUCH TARGETS
+   ======================================== */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 44px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .category-card,
+  .book-card,
+  .meditation-card,
+  .bolsilibro-card,
+  .mantra-card {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}

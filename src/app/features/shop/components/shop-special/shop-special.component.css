@@ -322,6 +322,19 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
   }
+  
+  /* Ajustes para tablets */
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2.25rem;
+  }
+  
+  .section-description {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -330,30 +343,37 @@
   }
   
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
+    line-height: 1.1;
   }
   
   .hero-subtitle {
     font-size: 1.1rem;
+    line-height: 1.3;
   }
   
   .hero-navigation {
     flex-direction: column;
     align-items: center;
+    gap: 0.75rem;
   }
   
   .nav-link {
     width: 100%;
     max-width: 300px;
     justify-content: center;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.95rem;
   }
   
   .section-header h2 {
-    font-size: 2rem;
+    font-size: 1.875rem;
+    line-height: 1.1;
   }
   
   .section-description {
     font-size: 1.1rem;
+    line-height: 1.4;
   }
   
   .content-grid {
@@ -368,37 +388,260 @@
   .cta-actions {
     flex-direction: column;
     align-items: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
+    gap: 1rem;
   }
   
-  .hero-subtitle {
-    font-size: 1rem;
+  /* Ajustes de espaciado para móvil */
+  .special-hero,
+  .special-section {
+    padding: 4rem 0;
   }
   
-  .section-header h2 {
-    font-size: 1.75rem;
-  }
-  
-  .section-description {
-    font-size: 1rem;
+  .section-header {
+    margin-bottom: 3rem;
   }
   
   .section-icon {
     width: 80px;
     height: 80px;
     font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .content-card {
+    border-radius: 16px;
+  }
+  
+  .card-image {
+    height: 200px;
+  }
+  
+  .card-content h3 {
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+  
+  .card-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .card-features span {
+    font-size: 0.85rem;
+  }
+  
+  .card-price {
+    font-size: 1.6rem;
+  }
+  
+  .cta-section {
+    padding: 4rem 0;
+  }
+  
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+  
+  .cta-content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .hero-title {
+    font-size: 1.875rem;
+    line-height: 1.1;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+  
+  .hero-navigation {
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    max-width: 280px;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    min-height: 44px;
+  }
+  
+  .section-header h2 {
+    font-size: 1.625rem;
+    line-height: 1.1;
+  }
+  
+  .section-description {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .section-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2.25rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .content-grid {
+    gap: 1.25rem;
+  }
+  
+  .card-content {
+    padding: 1.25rem;
   }
   
   .card-content h3 {
     font-size: 1.2rem;
+    line-height: 1.3;
+  }
+  
+  .card-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .card-features span {
+    font-size: 0.8rem;
+    gap: 0.4rem;
+  }
+  
+  .card-features i {
+    font-size: 1rem;
+    min-width: 18px;
   }
   
   .card-price {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+  
+  .card-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .cta-section {
+    padding: 3rem 0;
+  }
+  
+  .cta-content h2 {
+    font-size: 1.75rem;
+  }
+  
+  .cta-content p {
+    font-size: 1rem;
+  }
+  
+  .cta-actions .btn {
+    width: 100%;
+    max-width: 250px;
+    font-size: 0.9rem;
+    padding: 0.875rem 1.25rem;
+    min-height: 44px;
+  }
+  
+  /* Ajustes de espaciado para pantallas muy pequeñas */
+  .special-hero,
+  .special-section {
+    padding: 3rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* ========================================
+   TOUCH IMPROVEMENTS
+   ======================================== */
+@media (hover: none) and (pointer: coarse) {
+  .nav-link:hover,
+  .content-card:hover {
+    transform: none;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+}
+
+/* ========================================
+   PREVENT OVERFLOW
+   ======================================== */
+.shop-special-page {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.container {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ========================================
+   IMPROVE TOUCH TARGETS
+   ======================================== */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 44px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .nav-link {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .content-card {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* ========================================
+   MOBILE NAVIGATION IMPROVEMENTS
+   ======================================== */
+@media (max-width: 768px) {
+  .hero-navigation {
+    padding: 0 1rem;
+  }
+  
+  .nav-link.active {
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+  }
+  
+  .nav-link i {
+    font-size: 1.1rem;
+  }
+}
+
+/* ========================================
+   CARD LAYOUT IMPROVEMENTS
+   ======================================== */
+@media (max-width: 768px) {
+  .content-card.featured {
+    border-width: 3px;
+  }
+  
+  .card-image {
+    border-radius: 16px 16px 0 0;
+  }
+  
+  .card-badge {
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  
+  .card-features {
+    margin-bottom: 1.25rem;
   }
 }

@@ -2,6 +2,8 @@
   padding: 2rem;
   max-width: 1400px;
   margin: 0 auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .courses-header {
@@ -47,6 +49,20 @@
     position: relative;
     top: auto;
   }
+  
+  /* Ajustes para tablets */
+  .courses-page {
+    padding: 1.5rem;
+  }
+  
+  .courses-header h1 {
+    font-size: 2.25rem;
+  }
+  
+  .courses-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -54,11 +70,79 @@
     padding: 1rem;
   }
   
+  .courses-header {
+    margin-bottom: 2rem;
+  }
+  
   .courses-header h1 {
-    font-size: 2rem;
+    font-size: 1.875rem;
+    line-height: 1.1;
+  }
+  
+  .courses-header p {
+    font-size: 1rem;
+    line-height: 1.4;
   }
   
   .courses-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .courses-content {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-page {
+    padding: 0.75rem;
+  }
+  
+  .courses-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .courses-header h1 {
+    font-size: 1.625rem;
+    line-height: 1.1;
+  }
+  
+  .courses-header p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .courses-grid {
+    gap: 1rem;
+  }
+  
+  .courses-content {
+    gap: 1rem;
+  }
+}
+
+/* ========================================
+   TOUCH IMPROVEMENTS
+   ======================================== */
+@media (hover: none) and (pointer: coarse) {
+  .course-card:hover {
+    transform: none;
+  }
+}
+
+/* ========================================
+   IMPROVE TOUCH TARGETS
+   ======================================== */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 44px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .course-card {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 }

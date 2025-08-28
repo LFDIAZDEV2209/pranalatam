@@ -286,6 +286,9 @@
   cursor: pointer; 
 }
 
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
 @media (max-width: 1200px) {
   .nav-list { 
     gap: 0.8rem; 
@@ -314,8 +317,135 @@
   .search-popover { 
     right: 1rem; 
   }
+  
+  /* Ajustes para pantallas medianas */
+  .header-main {
+    padding: 0.5rem 0;
+  }
+  
+  .logo-title {
+    font-size: 1.2rem;
+  }
+  
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
 }
 
+@media (max-width: 768px) {
+  /* Ajustes específicos para móvil */
+  .header-top {
+    padding: 0.4rem 0;
+    font-size: 0.8rem;
+  }
+  
+  .contact-info {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .social-links {
+    gap: 0.75rem;
+  }
+  
+  .header-main {
+    padding: 0.4rem 0;
+  }
+  
+  .logo-section {
+    gap: 0.5rem;
+  }
+  
+  .logo-title {
+    font-size: 1.1rem;
+  }
+  
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .icon-btn {
+    padding: 0.4rem;
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .mobile-menu-toggle {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .search-popover {
+    right: 0.5rem;
+    width: calc(100vw - 2rem);
+    max-width: 300px;
+  }
+  
+  .search-input-pop {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajustes para pantallas muy pequeñas */
+  .header-top {
+    padding: 0.3rem 0;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .header-main {
+    padding: 0.3rem 0;
+  }
+  
+  .logo-title {
+    font-size: 1rem;
+  }
+  
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  
+  .icon-btn {
+    padding: 0.35rem;
+    min-height: 40px;
+    min-width: 40px;
+  }
+  
+  .mobile-menu-toggle {
+    min-height: 40px;
+    min-width: 40px;
+    font-size: 1.25rem;
+  }
+  
+  .search-popover {
+    right: 0.25rem;
+    width: calc(100vw - 1.5rem);
+  }
+}
+
+/* ========================================
+   MOBILE MENU IMPROVEMENTS
+   ======================================== */
 .mobile-menu { 
   position: fixed; 
   top: 0; 
@@ -326,6 +456,10 @@
   transition: left 0.3s ease; 
   z-index: 1002; 
   overflow-y: auto; 
+  /* Prevenir scroll horizontal */
+  overflow-x: hidden;
+  /* Mejorar rendimiento de scroll */
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-menu.active { 
@@ -336,12 +470,17 @@
   display: flex; 
   justify-content: space-between; 
   align-items: center; 
-  padding: 2rem; 
+  padding: 1.5rem 1rem; 
   border-bottom: 1px solid var(--border-light); 
+  /* Prevenir que se mueva */
+  position: sticky;
+  top: 0;
+  background: var(--background-white);
+  z-index: 1;
 }
 
 .mobile-nav { 
-  padding: 2rem; 
+  padding: 1rem; 
 }
 
 .mobile-nav-list { 
@@ -358,8 +497,59 @@
   text-decoration: none; 
   border-bottom: 1px solid var(--border-light); 
   transition: color 0.2s ease; 
+  /* Mejorar área táctil */
+  min-height: 44px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .mobile-nav-link:hover { 
   color: var(--primary-pink); 
+}
+
+.mobile-nav-link i {
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+  min-width: 20px;
+}
+
+/* Botón de cerrar móvil */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  background: var(--background-light);
+  color: var(--primary-pink);
+}
+
+/* ========================================
+   TOUCH IMPROVEMENTS
+   ======================================== */
+@media (hover: none) and (pointer: coarse) {
+  .nav-link:hover,
+  .dropdown-item:hover,
+  .mobile-nav-link:hover {
+    transform: none;
+  }
+  
+  .logo-section:hover {
+    transform: none;
+  }
+  
+  .social-link:hover {
+    opacity: 1;
+  }
 }

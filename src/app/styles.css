@@ -1,10 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* ========================================
+   GLOBAL MOBILE-FIRST STYLES
+   ======================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  /* Prevenir zoom en iOS */
+  -webkit-text-size-adjust: 100%;
+  /* Prevenir scroll horizontal */
+  overflow-x: hidden;
+  /* Mejorar rendimiento de scroll */
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -12,9 +24,43 @@ body {
   line-height: 1.6;
   color: #2d3748;
   background-color: #f7fafc;
+  /* Prevenir scroll horizontal */
+  overflow-x: hidden;
+  /* Mejorar rendimiento en móvil */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevenir selección de texto no deseada */
+  -webkit-user-select: none;
+  user-select: none;
+  /* Permitir selección en inputs */
+  -webkit-touch-callout: none;
 }
 
-/* Button styles */
+/* Permitir selección en elementos editables */
+input, textarea, [contenteditable] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* ========================================
+   CONTAINER RESPONSIVE
+   ======================================== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -29,6 +75,10 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
+  /* Mejorar experiencia táctil */
+  min-height: 44px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn-primary {
@@ -56,9 +106,18 @@ body {
 .btn-sm {
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
+  min-height: 36px;
 }
 
-/* Utility classes */
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  min-height: 52px;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
 .text-center {
   text-align: center;
 }
@@ -75,9 +134,104 @@ body {
   padding: 1rem;
 }
 
-/* Responsive utilities */
+.w-100 {
+  width: 100%;
+}
+
+/* ========================================
+   MOBILE-SPECIFIC IMPROVEMENTS
+   ======================================== */
 @media (max-width: 768px) {
   .btn {
     width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Prevenir scroll horizontal en móvil */
+  body {
+    padding-right: 0;
+  }
+  
+  /* Mejorar espaciado en móvil */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Ajustar tamaños de fuente para móvil */
+  h1, .h1 { font-size: 1.75rem; }
+  h2, .h2 { font-size: 1.5rem; }
+  h3, .h3 { font-size: 1.25rem; }
+  h4, .h4 { font-size: 1.125rem; }
+  h5, .h5 { font-size: 1rem; }
+  h6, .h6 { font-size: 0.875rem; }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  /* Ajustes adicionales para pantallas muy pequeñas */
+  .btn {
+    font-size: 0.875rem;
+    padding: 0.625rem 1.25rem;
+  }
+}
+
+/* ========================================
+   TOUCH IMPROVEMENTS
+   ======================================== */
+@media (hover: none) and (pointer: coarse) {
+  /* Mejorar experiencia táctil en dispositivos touch */
+  .btn:hover {
+    transform: none;
+  }
+  
+  /* Aumentar área táctil */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ========================================
+   SCROLLBAR STYLING
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* ========================================
+   FOCUS VISIBILITY
+   ======================================== */
+.btn:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+  .btn {
+    display: none;
   }
 }
