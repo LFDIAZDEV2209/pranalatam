@@ -179,6 +179,21 @@ NPM_FLAGS=--legacy-peer-deps
 
 ### **Solución de Problemas**
 
+#### **Error: Unknown argument: build-optimizer**
+```bash
+# Causa: Flag obsoleto en Angular CLI v20+
+# Solución: Usar solo --configuration production
+
+# Script correcto en package.json
+"build:netlify": "ng build --configuration production"
+
+# Verificar versión de Angular CLI
+ng version
+
+# Build manual para testing
+ng build --configuration production
+```
+
 #### **Error: CSS Budget Exceeded**
 ```bash
 # Solución 1: Limpiar cache
